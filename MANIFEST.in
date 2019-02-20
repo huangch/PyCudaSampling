@@ -1,0 +1,6 @@
+include README.md
+include PyCudaSampling/*
+exclude test.py
+exclude libcudaSampling.a
+prune test.py
+prune libcudaSampling.a

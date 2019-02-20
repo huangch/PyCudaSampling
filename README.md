@@ -11,6 +11,7 @@ Essentially, image sampling is nothing but reading/writing data into memory. How
 ## Performance 
 
 ![](performance_comparison.png "Performance Comparison")
+
 We have comparied the performance in between OpenCV and PyCudaSampling. We setup an experiement (please see the tests folder) which aimed to repeatly sample a region from lena, and we measured the time consumptions of the two methods. Note that when sampling 10000 of 16x16 images from the input, OpenCV costed 225 seconds while PyCudaSampling spent only 0.664 seconds.
 
 ## Installation

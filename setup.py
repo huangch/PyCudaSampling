@@ -93,6 +93,12 @@ class CMakeExtension(Extension):
 
 class my_build_ext(build_ext):
     # This class allows C extension building to fail.
+    def finalize_options(self):
+        build_ext.finalize_options(self)
+        # Prevent numpy from thinking it is still in its setup process:
+        __builtins__.__NUMPY_SETUP__ = False
+        import numpy
+        self.include_dirs.append(numpy.get_include())
 
     def run(self):
         build_ext.run(self)
@@ -172,6 +178,7 @@ setup(name = 'PyCudaSampling',
     description="CUDA-based Image Sampling Tool.",
     ext_modules=[module1, module2],
     cmdclass = {'build_ext': my_build_ext},
+    setup_requires=['numpy'],
     packages=['PyCudaSampling'],
     # package_data={'PyCudaSampling': ['libcudaSampling.so']},
     )

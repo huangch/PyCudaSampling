@@ -95,7 +95,7 @@ static PyObject* pyFuncSampling(PyObject* self, PyObject* args)
 		xItem = PyList_GetItem(pItemList, 0);
 		yItem = PyList_GetItem(pItemList, 1);
 
-		if(!PyInt_Check(xItem) || !PyInt_Check(yItem)) {
+		if(!PyLong_Check(xItem) || !PyLong_Check(yItem)) {
 			PyErr_SetString(PyExc_TypeError, "All x and y must be integers.");
 			free(xBuf);
 			free(yBuf);
@@ -105,8 +105,8 @@ static PyObject* pyFuncSampling(PyObject* self, PyObject* args)
 			return NULL;
 		}
 
-		xBuf[i] = (int)PyInt_AsLong(xItem);
-		yBuf[i] = (int)PyInt_AsLong(yItem);
+		xBuf[i] = (int)PyLong_AsLong(xItem);
+		yBuf[i] = (int)PyLong_AsLong(yItem);
 
 		tItem = PyList_GetItem(tList, i);
 

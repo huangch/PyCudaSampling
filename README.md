@@ -1,4 +1,4 @@
-# PyCudaSampling: A Python Package for Accerelated Image Sampling using CUDA
+# PyCudaSampling: A Python Package for Image Sampling based on CUDA
 
 This package is a python 2/3 package providing GPU-accelerated image sampling.
 
@@ -11,14 +11,12 @@ Essentially, image sampling is nothing but reading/writing data into memory. How
 ## Performance 
 
 ![](performance_comparison.png "Performance Comparison")
-
 We have comparied the performance in between OpenCV and PyCudaSampling. We setup an experiement (please see the tests folder) which aimed to repeatly sample a region from lena, and we measured the time consumptions of the two methods. Note that when sampling 10000 of 16x16 images from the input, OpenCV costed 225 seconds while PyCudaSampling spent only 0.664 seconds.
 
 ## Installation
 
 pip install git+https://github.com/huangch/PyCudaSampling.git@master
 
-CMake, CUDA and numpy will be needed. This package has been tested in both python 2.7 and 3.6.
-
+This package has been tested in both python 2.7 and 3.6.
 Happy coding!
 

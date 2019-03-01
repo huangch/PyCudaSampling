@@ -1,6 +1,8 @@
-include README.md
-include PyCudaSampling/*
-exclude test.py
-exclude libcudaSampling.a
-prune test.py
-prune libcudaSampling.a
+include README.md performance_comparison.png
+graft PyCudaSampling
+graft example
+exclude .project .pydevproject .cproject
+prune dist
+prune build
+prune .settings
+global-exclude *.py[co] *.a *.so *.o
